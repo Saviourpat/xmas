@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Background Music -->
-  <audio id="bg-music" loop muted>
+  <audio id="bg-music" autoplay loop muted>
     <source src="we-wish-you-a-merry-christmas-happy-remix-background-intro-theme-265842.mp3" type="audio/mp3">
   </audio>
 
@@ -164,12 +164,13 @@
 
       Wishing you a Merry Christmas and a Blessed New Year. May all your days be bright and filled with happiness.
       <br>
-      SaviourPat(BIMSUN LABS)
+      <br>
+      SAVIOUR PATRICK (BIMSUN lABS)
+      <br>
     </div>
 
-    <!-- Play Music Button -->
-    <button class="play-button" id="play-music-btn">Play Music</button>
-
+    <!-- Play Button -->
+    <button id="play-button" class="play-button">Play Music</button>
   </div>
 
   <!-- Footer with Social Media Links -->
@@ -182,21 +183,23 @@
   </footer>
 
   <script>
-    // Play the music on button click
-    const playButton = document.getElementById('play-music-btn');
-    const audio = document.getElementById('bg-music');
-
-    // Initialize the button to unmute audio on page load
+    // Automatically simulate a button click to play the music when the page loads
     window.onload = function() {
-      playButton.style.display = 'block';  // Show play button when page loads
-    };
+      // Find the play button and the audio element
+      const playButton = document.getElementById('play-button');
+      const audio = document.getElementById('bg-music');
 
-    // Play audio when button is clicked
-    playButton.addEventListener('click', function() {
-      audio.muted = false;  // Unmute audio when button is clicked
-      audio.play();         // Play the music
-      playButton.style.display = 'none';  // Hide the button after playing music
-    });
+      // Simulate the click event to play music automatically
+      playButton.click();
+
+      // Function to handle play button click
+      playButton.onclick = function() {
+        // Unmute and play the music
+        audio.muted = false;
+        audio.play();
+        playButton.style.display = 'none'; // Hide the play button after it is clicked
+      };
+    };
   </script>
 
 </body>
