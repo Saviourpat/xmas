@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Background Music -->
-  <audio id="bg-music" autoplay loop muted>
+  <audio id="bg-music" loop muted>
     <source src="we-wish-you-a-merry-christmas-happy-remix-background-intro-theme-265842.mp3" type="audio/mp3">
   </audio>
 
@@ -48,7 +48,7 @@
 
     /* Merry Christmas Header */
     .header {
-      font-size: 4rem;
+      font-size: 5rem; /* Increased font size */
       color: #ff6347; /* Festive red */
       font-family: 'Brush Script MT', cursive;
       position: relative;
@@ -56,61 +56,23 @@
       margin-top: 20px;
     }
 
-    /* Modal style */
-    .modal {
-      margin-top: 5%;
-      display: none;
-      position: fixed;
-      top: 50%; /* Center vertically */
-      left: 50%;
-      transform: translate(-50%, -50%); /* Center horizontally */
-      background-color: #fff8dc; /* Light gold */
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(247, 245, 245, 0.938);
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: 1000;
-      width: 80%;
-      max-width: 650px; /* Increased width */
-      height: auto;
+    /* Text Content */
+    .content-text {
+      color: #ff0000;
+      font-size: 1.5rem; /* Larger font for better readability */
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
     }
 
-    .modal h2 {
-      font-size: 3rem;
-      color: #ff0000; /* Red color */
-      font-family: 'Brush Script MT', cursive;
-    }
-
-    .modal p {
-      font-size: 1.5rem;
-      color: #2e8b57; /* Green color */
-    }
-
-    /* Modal close button */
-    .close-btn {
-      background-color: #ff6347; /* Red button */
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    .close-btn:hover {
-      background-color: #b22222;
-    }
-
-    /* Social Media Icons (Footer) */
-    footer, header {
+    /* Footer with Social Media Links */
+    footer {
       width: 100%;
       padding: 20px;
       position: fixed;
       bottom: 0;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.7);
     }
 
     .social-icons {
@@ -132,15 +94,11 @@
     /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .header {
-        font-size: 3rem; /* Smaller font size for tablets */
+        font-size: 3.5rem; /* Smaller font size for tablets */
       }
 
-      .modal h2 {
-        font-size: 2.5rem;
-      }
-
-      .modal p {
-        font-size: 1.5rem;
+      .content-text {
+        font-size: 1.3rem; /* Slightly smaller for tablets */
       }
 
       .social-icons a {
@@ -150,15 +108,11 @@
 
     @media (max-width: 480px) {
       .header {
-        font-size: 2rem; /* Smaller font size for phones */
+        font-size: 2.5rem; /* Smaller font size for phones */
       }
 
-      .modal h2 {
-        font-size: 1.3rem;
-      }
-
-      .modal p {
-        font-size: 1rem;
+      .content-text {
+        font-size: 1.1rem; /* Smaller font for phones */
       }
 
       .social-icons a {
@@ -176,11 +130,13 @@
     <div class="header">
       🎄Merry Christmas🎅
     </div>
-    <p style="color: #ff0000; font-size: large;"> 
+
+    <p class="content-text"> 
 As the snowflakes gently fall and the world glistens with the magic of the season, I want to take a moment to send you the warmest and most heartfelt wishes. Christmas is a time for joy, a time for reflection, and a time for love. It’s a time when we celebrate the blessings that fill our hearts and the hope that fills our souls.
 
 May this Christmas bring you peace, joy, and a sense of wonder that lingers throughout the year. I hope your heart is filled with the warmth of family and friends, and that every moment is touched by the beauty of the season. May the laughter of loved ones surround you and fill your home with a sense of belonging and comfort.
-As we celebrate the birth of a Savior, may you feel the love of Christ in every corner of your life. Let His light shine brightly in your heart, guiding you through the year ahead with grace, strength, and unwavering hope. May you find peace in the quiet moments and joy in the smallest of blessings. 
+
+As we gather to celebrate the birth of a Savior, may you feel the love of Christ in every corner of your life. Let His light shine brightly in your heart, guiding you through the year ahead with grace, strength, and unwavering hope. May you find peace in the quiet moments and joy in the smallest of blessings. 
 
 I pray that the spirit of Christmas brings you closer to those you love and opens your heart to the possibilities that the New Year holds. Let this season be a reminder of the beauty of giving, the power of kindness, and the importance of gratitude. 
 
@@ -188,11 +144,13 @@ May you be surrounded by the love of those who matter most, and may your heart b
 
 Merry Christmas and a Blessed New Year to you and yours. May your heart and spirit be light, and your days be filled with hope and love.
 
-With love and warm wishes,  
-Saviour Patrick
+With love and warm wishes,
+      <br>
+      Saviour Patrick
       <br>
       Merry Christmas! 🎄🎁
     </p>
+  </div>
 
   <!-- Footer with Social Media Links -->
   <footer>
@@ -204,42 +162,14 @@ Saviour Patrick
   </footer>
 
   <script>
-    let currentModalIndex = 0;
-    const totalModals = 15;
-
-    // Function to show modal
-    function showModal(index) {
-      const modal = document.getElementById(`modal-${index}`);
-      modal.style.display = 'block';
-      setTimeout(() => {
-        modal.style.opacity = 1;
-      }, 10);
-    }
-
-    // Function to close modal
-    function closeModal(index) {
-      const modal = document.getElementById(`modal-${index}`);
-      modal.style.opacity = 0;
-      setTimeout(() => {
-        modal.style.display = 'none';
-      }, 500);
-    }
-
-    // Function to automatically show modals
-    function showNextModal() {
-      currentModalIndex = (currentModalIndex + 1) % totalModals;
-      showModal(currentModalIndex + 1);
-    }
-
-    // Show the first modal
-    showModal(currentModalIndex + 1);
-
-    // Auto show next modal every 5 seconds
-    setInterval(showNextModal, 5000); // 5 seconds auto slide
-
-    // Play the background music after a slight delay (if needed for autoplay)
-    const audio = document.getElementById('bg-music');
-    audio.muted = false;  // Unmute the audio after it starts
+    // Function to play the background music when the page is scrolled
+    window.addEventListener('scroll', function() {
+      const audio = document.getElementById('bg-music');
+      if (audio.paused) {
+        audio.play();
+        audio.muted = false; // Unmute the audio
+      }
+    });
   </script>
 
 </body>
