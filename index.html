@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merry Christmas from the Savior</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop muted>
+    <source src="we-wish-you-a-merry-christmas-happy-remix-background-intro-theme-265842.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Font Awesome Icons (Social) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <style>
+    /* General styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('https://th.bing.com/th/id/OIP.j8745L1pTQDTvJRO6QHNYQHaFG?rs=1&pid=ImgDetMain'); /* Replace with your desired background image */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* This makes the footer stay at the bottom */
+      height: 100vh; /* Full viewport height */
+      text-align: center;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    /* Main Content Container */
+    .container {
+      margin-top: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 30px;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    /* Merry Christmas Header */
+    .header {
+      font-size: 4rem;
+      color: #ff6347; /* Festive red */
+      font-family: 'Brush Script MT', cursive;
+      position: relative;
+      z-index: 10;
+      margin-top: 20px;
+    }
+
+    /* Modal style */
+    .modal {
+      margin-top: 5%;
+      display: none;
+      position: fixed;
+      top: 50%; /* Center vertically */
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center horizontally */
+      background-color: #fff8dc; /* Light gold */
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(247, 245, 245, 0.938);
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1000;
+      width: 80%;
+      max-width: 650px; /* Increased width */
+      height: auto;
+    }
+
+    .modal h2 {
+      font-size: 3rem;
+      color: #ff0000; /* Red color */
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .modal p {
+      font-size: 1.5rem;
+      color: #2e8b57; /* Green color */
+    }
+
+    /* Modal close button */
+    .close-btn {
+      background-color: #ff6347; /* Red button */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .close-btn:hover {
+      background-color: #b22222;
+    }
+
+    /* Social Media Icons (Footer) */
+    footer, header {
+      width: 100%;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      text-align: center;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: #ff6347;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ff0000;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .header {
+        font-size: 3rem; /* Smaller font size for tablets */
+      }
+
+      .modal h2 {
+        font-size: 2.5rem;
+      }
+
+      .modal p {
+        font-size: 1.5rem;
+      }
+
+      .social-icons a {
+        font-size: 1.2rem; /* Smaller icons on tablets */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        font-size: 2rem; /* Smaller font size for phones */
+      }
+
+      .modal h2 {
+        font-size: 1.3rem;
+      }
+
+      .modal p {
+        font-size: 1rem;
+      }
+
+      .social-icons a {
+        font-size: 1rem; /* Smaller icons on phones */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Content Container -->
+  <div class="container">
+    <!-- Merry Christmas Header -->
+    <div class="header">
+      🎄Merry Christmas🎅
+    </div>
+    <p style="color: #ff0000; font-size: large;"> 
+      May your heart be warm with cheer,  
+      As Christmas time is drawing near.  
+      With love, joy, and peace so bright,  
+      Wishing you a season of delight.  
+      
+      May laughter fill your home and soul,  
+      As Christmas blessings make you whole.  
+      A Merry Christmas, full of grace,  
+      And joy that lights your special place.  
+      Merry Christmas! 🎄🎁
+    </p>
+    <br>
+
+    <!-- Modal Containers (Total 15 Modals) -->
+    <div class="modal" id="modal-1">
+      <h2>May the Savior's Light Shine Bright</h2>
+      <p>Wishing you peace, love, and joy this Christmas season.</p>
+      <button class="close-btn" onclick="closeModal(1)">Close</button>
+    </div>
+    <div class="modal" id="modal-2">
+      <h2>Blessings of the Season</h2>
+      <p>May your Christmas be filled with faith and the love of Christ.</p>
+      <button class="close-btn" onclick="closeModal(2)">Close</button>
+    </div>
+    <!-- Continue with modals up to modal-15 -->
+
+  </div>
+
+  <!-- Footer with Social Media Links -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/Saviourpat.Ekpenyong" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+      <a href="https://x.com/saviourpatrick8" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="https://wa.me/qr/J3O5AG6I6GGDP1" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+    </div>
+  </footer>
+
+  <script>
+    let currentModalIndex = 0;
+    const totalModals = 15;
+
+    // Function to show modal
+    function showModal(index) {
+      const modal = document.getElementById(`modal-${index}`);
+      modal.style.display = 'block';
+      setTimeout(() => {
+        modal.style.opacity = 1;
+      }, 10);
+    }
+
+    // Function to close modal
+    function closeModal(index) {
+      const modal = document.getElementById(`modal-${index}`);
+      modal.style.opacity = 0;
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 500);
+    }
+
+    // Function to automatically show modals
+    function showNextModal() {
+      currentModalIndex = (currentModalIndex + 1) % totalModals;
+      showModal(currentModalIndex + 1);
+    }
+
+    // Show the first modal
+    showModal(currentModalIndex + 1);
+
+    // Auto show next modal every 5 seconds
+    setInterval(showNextModal, 5000); // 5 seconds auto slide
+
+    // Play the background music after a slight delay (if needed for autoplay)
+    const audio = document.getElementById('bg-music');
+    audio.muted = false;  // Unmute the audio after it starts
+  </script>
+
+</body>
+</html>
