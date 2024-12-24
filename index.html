@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merry Christmas from the Savior</title>
+  
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Background Music -->
-  <audio id="bg-music" loop muted>
+  <audio id="bg-music" autoplay loop muted>
     <source src="we-wish-you-a-merry-christmas-happy-remix-background-intro-theme-265842.mp3" type="audio/mp3">
   </audio>
 
@@ -48,7 +49,7 @@
 
     /* Merry Christmas Header */
     .header {
-      font-size: 5rem; /* Increased font size */
+      font-size: 4rem;
       color: #ff6347; /* Festive red */
       font-family: 'Brush Script MT', cursive;
       position: relative;
@@ -56,23 +57,22 @@
       margin-top: 20px;
     }
 
-    /* Text Content */
-    .content-text {
+    /* Main text content */
+    .message {
+      font-size: 1.5rem;
       color: #ff0000;
-      font-size: 1.5rem; /* Larger font for better readability */
-      max-width: 800px;
-      margin: 20px auto;
-      line-height: 1.6;
+      margin-top: 20px;
+      padding: 0 20px;
     }
 
-    /* Footer with Social Media Links */
+    /* Social Media Icons (Footer) */
     footer {
       width: 100%;
       padding: 20px;
       position: fixed;
       bottom: 0;
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .social-icons {
@@ -94,29 +94,29 @@
     /* Media Queries for responsiveness */
     @media (max-width: 768px) {
       .header {
-        font-size: 3.5rem; /* Smaller font size for tablets */
+        font-size: 3rem;
       }
 
-      .content-text {
-        font-size: 1.3rem; /* Slightly smaller for tablets */
+      .message {
+        font-size: 1.2rem;
       }
 
       .social-icons a {
-        font-size: 1.2rem; /* Smaller icons on tablets */
+        font-size: 1.2rem;
       }
     }
 
     @media (max-width: 480px) {
       .header {
-        font-size: 2.5rem; /* Smaller font size for phones */
+        font-size: 2rem;
       }
 
-      .content-text {
-        font-size: 1.1rem; /* Smaller font for phones */
+      .message {
+        font-size: 1rem;
       }
 
       .social-icons a {
-        font-size: 1rem; /* Smaller icons on phones */
+        font-size: 1rem;
       }
     }
   </style>
@@ -128,28 +128,18 @@
   <div class="container">
     <!-- Merry Christmas Header -->
     <div class="header">
-      🎄Merry Christmas🎅
+      🎄 Merry Christmas 🎅
     </div>
 
-    <p class="content-text"> 
-As the snowflakes gently fall and the world glistens with the magic of the season, I want to take a moment to send you the warmest and most heartfelt wishes. Christmas is a time for joy, a time for reflection, and a time for love. It’s a time when we celebrate the blessings that fill our hearts and the hope that fills our souls.
+    <!-- Christmas Message -->
+    <div class="message">
+      As the snowflakes gently fall and the world glistens with the magic of the season, I want to send you my warmest wishes. May your heart be filled with love, your home with joy, and your life with peace.
 
-May this Christmas bring you peace, joy, and a sense of wonder that lingers throughout the year. I hope your heart is filled with the warmth of family and friends, and that every moment is touched by the beauty of the season. May the laughter of loved ones surround you and fill your home with a sense of belonging and comfort.
+      This Christmas, I hope you experience the beauty of giving and the joy of receiving. May the light of the Savior guide your path and bring you closer to those you hold dear.
 
-As we gather to celebrate the birth of a Savior, may you feel the love of Christ in every corner of your life. Let His light shine brightly in your heart, guiding you through the year ahead with grace, strength, and unwavering hope. May you find peace in the quiet moments and joy in the smallest of blessings. 
+      Wishing you a Merry Christmas and a Blessed New Year. May all your days be bright and filled with happiness.
+    </div>
 
-I pray that the spirit of Christmas brings you closer to those you love and opens your heart to the possibilities that the New Year holds. Let this season be a reminder of the beauty of giving, the power of kindness, and the importance of gratitude. 
-
-May you be surrounded by the love of those who matter most, and may your heart be filled with the purest joy. Here's to creating memories that will last a lifetime and embracing the magic that only Christmas can bring.
-
-Merry Christmas and a Blessed New Year to you and yours. May your heart and spirit be light, and your days be filled with hope and love.
-
-With love and warm wishes,
-      <br>
-      Saviour Patrick
-      <br>
-      Merry Christmas! 🎄🎁
-    </p>
   </div>
 
   <!-- Footer with Social Media Links -->
@@ -157,19 +147,16 @@ With love and warm wishes,
     <div class="social-icons">
       <a href="https://www.facebook.com/Saviourpat.Ekpenyong" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
       <a href="https://x.com/saviourpatrick8" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="https://wa.me/qr/J3O5AG6I6GGDP1" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+      <a href="https://wa.me/qr/J3O5AG6I6GGDP1" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
   </footer>
 
   <script>
-    // Function to play the background music when the page is scrolled
-    window.addEventListener('scroll', function() {
+    // Play background music automatically on load, unmute after a slight delay
+    window.onload = function() {
       const audio = document.getElementById('bg-music');
-      if (audio.paused) {
-        audio.play();
-        audio.muted = false; // Unmute the audio
-      }
-    });
+      audio.muted = false;  // Unmute the audio after loading
+    };
   </script>
 
 </body>
